@@ -14,8 +14,11 @@ var color = document.getElementsByClassName("color");
 for (var z = 0 ; z < color.length ; z++){
   color[z].addEventListener("click",cambiaColor);
 }
+var btnReinicia= document.getElementById("btnReinicia");
+btnReinicia.addEventListener("click",inicializaEventos);
+
 function mostrar(){
-this.innerText = "1";
+  this.innerText = "1";
 }
 
 function mostrar_bomba(){
@@ -26,7 +29,6 @@ function mostrar_bomba(){
 
   }
   remueveEventos();
-
 }
 
 function cambiaColor(){
@@ -36,8 +38,10 @@ function remueveEventos(){
 
   for ( var i = 0 ; i< boton.length ; i++ )
   {
-    //removeEventListener
     color[i].removeEventListener("click", cambiaColor);
     boton[i].removeEventListener("click",mostrar);
   }
+}
+function inicializaEventos(){
+  location.reload();
 }
